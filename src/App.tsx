@@ -1,18 +1,19 @@
 import data from './data.json'
+import { MasonryLayout } from './components/MasonryLayout'
+import { ImageCard } from './components/ImageCard'
 
 function App() {
   return (
     <div className="p-5 md:p-10">
-      <div className="columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8">
+      <MasonryLayout>
         {data.images.map((image, index) => (
-          <img
+          <ImageCard
             key={index}
             src={image.src}
-            alt={`Photo by ${image.author}`}
-            className="w-full"
+            author={image.author}
           />
         ))}
-      </div>
+      </MasonryLayout>
     </div>
   )
 }
