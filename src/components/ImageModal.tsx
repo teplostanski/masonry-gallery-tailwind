@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect, useState, useRef } from 'react';
-import { Modal, ModalContent, Button } from "@nextui-org/react";
+import { useRef } from 'react';
+import { Modal, ModalContent } from "@nextui-org/react";
 import type { Swiper as SwiperType } from 'swiper';
+import { ModalControls } from './ModalControls';
 import 'swiper/css';
 
 interface ImageModalProps {
@@ -12,17 +13,10 @@ interface ImageModalProps {
 }
 
 export default function ImageModal({ images, initialSlide, isOpen, onClose }: ImageModalProps) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const swiperRef = useRef<SwiperType>();
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const handlePrev = () => swiperRef.current?.slidePrev();
+  const handleNext = () => swiperRef.current?.slideNext();
 
   return (
     <Modal 
@@ -60,32 +54,11 @@ export default function ImageModal({ images, initialSlide, isOpen, onClose }: Im
                   </div>
                 </SwiperSlide>
               ))}
-              <div className="absolute bottom-4 left-0 right-0 z-10 flex justify-center items-center gap-4">
-                <Button
-                  size="lg"
-                  variant="flat"
-                  color="default"
-                  onPress={() => swiperRef.current?.slidePrev()}
-                >
-                  Prev
-                </Button>
-                <Button
-                  size="lg"
-                  variant="flat"
-                  color="default"
-                  onPress={onClose}
-                >
-                  Close
-                </Button>
-                <Button
-                  size="lg"
-                  variant="flat"
-                  color="default"
-                  onPress={() => swiperRef.current?.slideNext()}
-                >
-                  Next
-                </Button>
-              </div>
+              <ModalControls
+                onPrev={handlePrev}
+                onNext={handleNext}
+                onClose={onClose}
+              />
             </Swiper>
           </div>
         )}
