@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from '@nextui-org/react';
 
 interface ImageCardProps {
   src: string;
@@ -6,21 +7,21 @@ interface ImageCardProps {
 }
 
 export const ImageCard = ({ src, author }: ImageCardProps) => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
-
   return (
-    <div className="group break-inside-avoid w-full mb-5">
-      <div className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        <img
-          src={src}
-          alt={`Photo by ${author}`}
-          className="w-full"
-          onLoad={() => setIsLoaded(true)}
-        />
-        <p className="mt-2 text-sm text-gray-600">
-          Photo <span className="font-light">by {author}</span>
-        </p>
-      </div>
+    <div className="break-inside-avoid w-full mb-5">
+      <Image
+        src={src}
+        alt={`Photo by ${author}`}
+        classNames={{
+          wrapper: "w-full",
+          img: "w-full"
+        }}
+        radius="none"
+        shadow="none"
+      />
+      <p className="mt-2 text-sm text-gray-600">
+        Photo <span className="font-light">by {author}</span>
+      </p>
     </div>
   );
 }; 
