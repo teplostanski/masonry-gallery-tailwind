@@ -1,14 +1,14 @@
-import React from 'react';
 import { Image } from '@nextui-org/react';
 
 interface ImageCardProps {
   src: string;
   author: string;
+  onClick: () => void;
 }
 
-export const ImageCard = ({ src, author }: ImageCardProps) => {
+export const ImageCard = ({ src, author, onClick }: ImageCardProps) => {
   return (
-    <div className="break-inside-avoid w-full mb-5">
+    <div className="break-inside-avoid w-full mb-5 cursor-pointer" onClick={onClick}>
       <Image
         src={src}
         alt={`Photo by ${author}`}
