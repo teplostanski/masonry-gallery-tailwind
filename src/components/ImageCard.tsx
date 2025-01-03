@@ -10,7 +10,7 @@ export const ImageCard = ({ src, author, onClick }: ImageCardProps) => {
   return (
     <div className="break-inside-avoid w-full mb-5 cursor-pointer" onClick={onClick}>
       <Image
-        src={src}
+        src={`${import.meta.env.VITE_BASE_URL}${src}`}
         alt={`Photo by ${author}`}
         classNames={{
           wrapper: "w-full",

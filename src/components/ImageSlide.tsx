@@ -9,11 +9,11 @@ interface ImageSlideProps {
 export const ImageSlide = ({ src, author, virtualIndex }: ImageSlideProps) => {
   return (
     <SwiperSlide virtualIndex={virtualIndex}>
-      <div className="h-full flex items-center justify-center">
+      <div className="h-svh flex items-center justify-center">
         <img
           src={src}
           alt={`Photo by ${author}`}
-          className="w-full h-auto max-h-screen object-contain"
+          className="w-full h-auto max-h-svh object-contain"
         />
       </div>
     </SwiperSlide>
