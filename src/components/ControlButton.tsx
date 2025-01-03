@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from "@nextui-org/react";
+import { Button, ButtonProps } from "@nextui-org/button";
 
 interface ControlButtonProps extends ButtonProps {
   children: React.ReactNode;
