@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/masonry-gallery-tailwind/',
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
