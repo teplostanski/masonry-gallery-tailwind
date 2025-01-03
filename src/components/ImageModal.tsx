@@ -32,7 +32,7 @@ export default function ImageModal({ images, initialSlide, isOpen, onClose }: Im
     >
       <ModalContent>
         {() => (
-          <div className="relative w-full h-screen">
+          <div className="relative w-full h-svh">
             <Swiper
               grabCursor={true}
               slidesPerView={1}
@@ -41,15 +41,15 @@ export default function ImageModal({ images, initialSlide, isOpen, onClose }: Im
               onBeforeInit={(swiper) => {
                 swiperRef.current = swiper;
               }}
-              className="w-full h-screen"
+              className="w-full h-svh"
             >
               {images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <div className="h-full flex items-center justify-center">
+                  <div className="h-svh flex items-center justify-center">
                     <img
-                      src={image.src}
+                      src={`${import.meta.env.VITE_BASE_URL}${image.src}`}
                       alt={`Photo by ${image.author}`}
-                      className="w-full h-auto max-h-screen object-contain"
+                      className="w-full h-auto max-h-svh object-contain"
                     />
                   </div>
                 </SwiperSlide>
