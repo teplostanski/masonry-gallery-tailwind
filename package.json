@@ -10,7 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.6.11",
+    "@nextui-org/button": "^2.2.9",
+    "@nextui-org/image": "^2.2.5",
+    "@nextui-org/link": "^2.2.7",
+    "@nextui-org/modal": "^2.2.7",
+    "@nextui-org/system": "^2.4.6",
+    "@nextui-org/theme": "^2.4.5",
     "framer-motion": "^11.18.0",
     "lucide-react": "^0.471.1",
     "react": "^18.3.1",
@@ -32,7 +37,6 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.5",
-    "vite-plugin-image-optimizer": "^1.1.8"
+    "vite": "^6.0.5"
   }
 }

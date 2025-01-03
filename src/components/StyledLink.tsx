@@ -1,4 +1,4 @@
-import { Link, LinkProps } from "@nextui-org/react";
+import { Link, LinkProps } from "@nextui-org/link";
 
 interface StyledLinkProps extends LinkProps {
   children: React.ReactNode;

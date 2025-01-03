@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRef } from 'react';
-import { Modal, ModalContent } from "@nextui-org/react";
+import { Modal, ModalContent } from "@nextui-org/modal";
 import type { Swiper as SwiperType } from 'swiper';
 import { ModalControls } from './ModalControls';
 import 'swiper/css';
