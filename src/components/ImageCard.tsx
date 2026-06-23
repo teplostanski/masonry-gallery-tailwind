@@ -1,27 +1,19 @@
-import { Image } from '@nextui-org/image';
-
 interface ImageCardProps {
   src: string;
   author: string;
-  onClick: () => void;
 }
 
-export const ImageCard = ({ src, author, onClick }: ImageCardProps) => {
+export const ImageCard = ({ src, author }: ImageCardProps) => {
   return (
-    <div className="break-inside-avoid w-full mb-5 cursor-pointer" onClick={onClick}>
-      <Image
+    <div className="break-inside-avoid w-full mb-5">
+      <img
         src={`${import.meta.env.VITE_BASE_URL}${src}`}
         alt={`Photo by ${author}`}
-        classNames={{
-          wrapper: "w-full",
-          img: "w-full"
-        }}
-        radius="none"
-        shadow="none"
+        className="w-full h-auto block"
       />
       <p className="mt-2 text-sm text-gray-600">
         Photo <span className="font-light">by {author}</span>
       </p>
     </div>
   );
-}; 
+};

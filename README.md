@@ -1,6 +1,6 @@
 # Masonry Gallery
 
-An image gallery with a Pinterest-style masonry layout. Clicking an image opens a fullscreen modal with swipe navigation.
+An image gallery with a Pinterest-like masonry layout.
 
 ![Gallery screenshot](./screen.png)
 
@@ -10,19 +10,16 @@ An image gallery with a Pinterest-style masonry layout. Clicking an image opens 
 
 ## Stack
 
-- **React**
-- **TypeScript**
-- **Vite**
-- **Tailwind CSS**
-- **NextUI**
-- **Swiper**
+- React 19
+- TypeScript 5
+- Vite 8
+- Tailwind CSS 4
+- HeroUI 3
 
 
 ## Features
 
 - Responsive `masonry` layout
-- Fullscreen viewing
-- Gesture support
 - Responsive design
 - Modern UI
 
@@ -48,7 +45,6 @@ npm run dev
 
 ## Build
 
-To build the project:
 ```bash
 npm run build
 ```
