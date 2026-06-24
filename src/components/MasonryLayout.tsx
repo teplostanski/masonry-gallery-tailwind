@@ -4,7 +4,7 @@ interface MasonryLayoutProps {
 
 export const MasonryLayout = ({ children }: MasonryLayoutProps) => {
   return (
-    <div className="columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8">
+    <div className="columns-1 gap-5 min-[1024px]:gap-8 min-[420px]:columns-2 min-[760px]:columns-3 min-[1280px]:columns-4 [&>img:not(:first-child)]:mt-5 min-[1024px]:[&>img:not(:first-child)]:mt-8">
       {children}
     </div>
   );
