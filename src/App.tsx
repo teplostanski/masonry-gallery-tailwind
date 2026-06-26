@@ -1,24 +1,25 @@
-import data from './data.json'
-import { MasonryLayout } from './components/MasonryLayout'
+import { images } from './data'
+import { Masonry } from './components/Masonry'
 import { ImageCard } from './components/ImageCard'
 import { Header } from './components/Header'
 
 function App() {
-  const { images } = data;
-  const currentYear = new Date().getFullYear();
-
   return (
     <div className="p-5 min-[768px]:p-10">
-      <Header currentYear={currentYear} />
-      <MasonryLayout>
-        {images.map((image, index) => (
+      <Header />
+      <Masonry>
+        {images.map((image) => (
           <ImageCard
-            key={index}
+            key={image.id}
+            id={image.id}
             src={image.src}
             author={image.author}
+            width={image.width}
+            height={image.height}
+            priority={true}
           />
         ))}
-      </MasonryLayout>
+      </Masonry>
     </div>
   )
 }
