@@ -14,7 +14,6 @@ An image gallery with a Pinterest-like masonry layout.
 - TypeScript 5
 - Vite 8
 - Tailwind CSS 4
-- HeroUI 3
 
 
 ## Features
@@ -47,6 +46,29 @@ npm run dev
 
 ```bash
 npm run build
+```
+
+## Breakpoints
+
+| Width    | Columns | Gap   |
+|----------|---------|-------|
+| `< 380`  | 1       | 20px  |
+| `≥ 380`  | 2       | 20px  |
+| `≥ 768`  | 3       | 20px  |
+| `≥ 1024` | —       | 32px  |
+| `≥ 1280` | 4       | 32px  |
+
+## Masonry
+
+```tsx
+import { Masonry } from './masonry'
+
+<Masonry>{photos.map((photo) => <Card key={photo.id} {...photo} />)}</Masonry>
+
+// Override columns / gap:
+<Masonry className="columns-2 gap-4 min-[900px]:columns-3">
+  ...
+</Masonry>
 ```
 
 <br>

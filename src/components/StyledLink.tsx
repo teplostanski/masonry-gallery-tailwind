@@ -1,16 +1,16 @@
-import { Link, type LinkProps } from "@heroui/react";
+import type { AnchorHTMLAttributes, ReactNode } from 'react'
 
-interface StyledLinkProps extends LinkProps {
-  children: React.ReactNode;
+type StyledLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  children: ReactNode
 }
 
-export const StyledLink = ({ children, ...props }: StyledLinkProps) => (
-  <Link
-    className="text-gray-700 font-light underline underline-offset-2 decoration-gray-500 decoration-1"
+export const StyledLink = ({ children, className = '', ...props }: StyledLinkProps) => (
+  <a
+    className={`font-light text-gray-700 underline decoration-gray-500 decoration-1 underline-offset-2 ${className}`.trim()}
     target="_blank"
     rel="noopener noreferrer"
     {...props}
   >
     {children}
-  </Link>
-);
+  </a>
+)

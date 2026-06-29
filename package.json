@@ -7,11 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port 4179"
   },
   "dependencies": {
-    "@heroui/react": "^3.2.2",
-    "@heroui/styles": "^3.2.2",
+    "@fontsource/inter-tight": "^5.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
